@@ -66,6 +66,15 @@ class Program
         int countAboveAverage = numbers.Count(num => num > average);
         Console.WriteLine($"Кількість чисел, що більші за середнє значення: {countAboveAverage}");
 
+        // Виконання арифметичних операцій з першим та другим числом
+        double firstNum = numbers[0];
+        double secondNum = numbers[1];
+        Console.WriteLine("\nАрифметичних операцій між першим і другим введеними числами:");
+        Console.WriteLine($"Додавання: {Add(firstNum, secondNum)}");
+        Console.WriteLine($"Віднімання: {Subtract(firstNum, secondNum)}");
+        Console.WriteLine($"Множення: {Multiply(firstNum, secondNum)}");
+        Console.WriteLine($"Ділення: {Divide(firstNum, secondNum)}");
+
         // Сортування масиву та виведення відсортованого масиву
         SortArray(numbers);
         Console.WriteLine("\nВідсортований масив:");
@@ -74,14 +83,6 @@ class Program
         // Обчислення різниці між максимальним і мінімальним значенням
         double difference = max - min;
         Console.WriteLine($"Різниця між максимальним і мінімальним значенням: {difference}");
-
-        // Виконання арифметичних операцій з першим та другим числом
-        double firstNum = numbers[0];
-        double secondNum = numbers[1];
-        Console.WriteLine($"Додавання: {Add(firstNum, secondNum)}");
-        Console.WriteLine($"Віднімання: {Subtract(firstNum, secondNum)}");
-        Console.WriteLine($"Множення: {Multiply(firstNum, secondNum)}");
-        Console.WriteLine($"Ділення: {Divide(firstNum, secondNum)}");
     }
 
     // Метод для обчислення медіани
@@ -128,9 +129,9 @@ class Program
     // Метод для ділення двох чисел
     static double Divide(double a, double b)
     {
+        // Перевірка на ділення на нуль
         if (b == 0)
         {
-            // Перевірка на ділення на нуль
             Console.WriteLine("Помилка: Ділення на нуль.");
             return double.NaN; // Повернення NaN у випадку ділення на нуль
         }
